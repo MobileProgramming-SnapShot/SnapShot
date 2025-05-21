@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Google Services
+/app/google-services.json
+
+# 환경 설정 파일
+/app/src/main/assets/env.properties
