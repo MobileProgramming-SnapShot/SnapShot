@@ -1,3 +1,177 @@
 <resources>
-    <string name="app_name">snapshot</string>
+    <string name="app_name">SnapShot</string>
+    <string name="app_description">태깅형 SNS 플랫폼</string>
+    
+    <!-- 인증 관련 문자열 -->
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="login">로그인</string>
+    <string name="sign_up">회원가입</string>
+    <string name="dont_have_account">계정이 없으신가요?</string>
+    <string name="already_have_account">이미 계정이 있으신가요?</string>
+    <string name="name">이름</string>
+    <string name="confirm_password">비밀번호 확인</string>
+    <string name="create_account">계정 만들기</string>
+    
+    <!-- 바텀 내비게이션 메뉴 -->
+    <string name="title_home">홈</string>
+    <string name="title_search">검색</string>
+    <string name="title_notifications">알림</string>
+    <string name="title_profile">프로필</string>
+    <string name="add_post">게시물 추가</string>
+    
+    <!-- 포스트 관련 -->
+    <string name="create_post">게시물 작성</string>
+    <string name="upload_photo">사진 업로드</string>
+    <string name="take_photo">사진 촬영</string>
+    <string name="caption">문구 입력…</string>
+    <string name="add_tags">태그 추가</string>
+    <string name="post">게시</string>
+    <string name="cancel">취소</string>
+    <string name="like">좋아요</string>
+    <string name="comment">댓글</string>
+    <string name="share">공유</string>
+    <string name="suggested_tags">추천 태그</string>
+    <string name="add_tag">태그 추가</string>
+    <string name="post_detail">게시물 상세</string>
+    <string name="profile_image">프로필 이미지</string>
+    <string name="post_image">게시물 이미지</string>
+    <string name="likes">좋아요</string>
+    <string name="comments">댓글</string>
+    <string name="error_loading_post">게시물을 불러오는 중 오류가 발생했습니다.</string>
+    
+    <!-- 태그 관련 -->
+    <string name="tag_location">위치 태그</string>
+    <string name="tag_product">제품 태그</string>
+    <string name="tag_brand">브랜드 태그</string>
+    <string name="tag_price">가격 태그</string>
+    <string name="tag_event">이벤트 태그</string>
+    <string name="tag_type_location">위치</string>
+    <string name="tag_type_product">제품</string>
+    <string name="tag_type_brand">브랜드</string>
+    <string name="tag_type_price">가격</string>
+    <string name="tag_type_event">이벤트</string>
+    <string name="select_tag_type">태그 유형 선택</string>
+    <string name="search_hint">검색어를 입력하세요</string>
+    <string name="save_tag">태그 저장</string>
+    <string name="unsave_tag">태그 저장 취소</string>
+    <string name="subscribe_tag">태그 알림 켜기</string>
+    <string name="unsubscribe_tag">태그 알림 끄기</string>
+    <string name="tag_saved">태그가 저장되었습니다</string>
+    <string name="tag_unsaved">태그 저장이 취소되었습니다</string>
+    <string name="tag_subscribed">태그 알림이 켜졌습니다</string>
+    <string name="tag_unsubscribed">태그 알림이 꺼졌습니다</string>
+    <string name="price_format">%s원</string>
+    <string name="open_in_maps">지도에서 보기</string>
+    <string name="visit_brand_website">브랜드 웹사이트</string>
+    <string name="view_product">제품 보기</string>
+    <string name="event_details">이벤트 상세정보</string>
+    
+    <!-- 태그 편집 관련 -->
+    <string name="tag_type_title">태그 유형</string>
+    <string name="tag_name">태그 이름</string>
+    <string name="tag_description">설명</string>
+    <string name="location_address">주소</string>
+    <string name="latitude">위도</string>
+    <string name="longitude">경도</string>
+    <string name="get_current_location">현재 위치 가져오기</string>
+    <string name="product_url">제품 링크</string>
+    <string name="price">가격</string>
+    <string name="brand">브랜드</string>
+    <string name="brand_website">브랜드 웹사이트</string>
+    <string name="brand_logo_url">로고 URL</string>
+    <string name="price_amount">금액</string>
+    <string name="currency">통화</string>
+    <string name="start_date">시작일</string>
+    <string name="end_date">종료일</string>
+    <string name="event_website">이벤트 웹사이트</string>
+    <string name="save">저장</string>
+    <string name="add_tag_details">태그 정보 입력</string>
+    <string name="edit_tag">태그 수정</string>
+    <string name="delete_tag">태그 삭제</string>
+    <string name="confirm_delete_tag">이 태그를 삭제하시겠습니까?</string>
+    <string name="yes">예</string>
+    <string name="no">아니요</string>
+    <string name="tag_save_failed">태그 저장에 실패했습니다</string>
+    
+    <!-- 포스트 수정/삭제 관련 -->
+    <string name="edit_post">게시물 수정</string>
+    <string name="delete_post">게시물 삭제</string>
+    <string name="confirm_delete_post">이 게시물을 정말 삭제하시겠습니까?</string>
+    <string name="post_updated">포스트가 업데이트되었습니다</string>
+    <string name="post_deleted">게시물이 삭제되었습니다.</string>
+    <string name="error_update_post">포스트 업데이트 오류</string>
+    <string name="error_delete_post">게시물 삭제 중 오류</string>
+    <string name="error_empty_caption">내용을 입력해주세요</string>
+    <string name="tags">태그</string>
+    <string name="edit_tags_hint">태그를 길게 누르면 삭제할 수 있습니다</string>
+    
+    <!-- 검색 관련 -->
+    <string name="search_tags">태그</string>
+    <string name="search_users">사용자</string>
+    <string name="search_places">장소</string>
+    <string name="trending_tags">인기 태그</string>
+    <string name="map_view">지도 보기</string>
+    <string name="list_view">목록 보기</string>
+    <string name="search_multiple_tags">다중 태그 검색</string>
+    <string name="add_search_tag">검색 태그 추가</string>
+    <string name="search_radius">검색 반경 (km)</string>
+    <string name="selected_tags">선택된 태그</string>
+    <string name="search">검색</string>
+    <string name="select_tag_type_format">%s 태그 선택</string>
+    
+    <!-- 프로필 관련 -->
+    <string name="posts">게시물</string>
+    <string name="followers">팔로워</string>
+    <string name="following">팔로잉</string>
+    <string name="edit_profile">프로필 편집</string>
+    <string name="follow">팔로우</string>
+    <string name="unfollow">팔로잉 취소</string>
+    <string name="saved_tags">저장된 태그</string>
+    <string name="logout">로그아웃</string>
+    <string name="bio">자기소개</string>
+    <string name="no_users_found">사용자를 찾을 수 없습니다</string>
+    <string name="followers_list">팔로워 목록</string>
+    <string name="following_list">팔로잉 목록</string>
+    <string name="username">사용자 이름</string>
+    
+    <!-- 알림 관련 -->
+    <string name="notification_new_like">%s님이 회원님의 게시물을 좋아합니다</string>
+    <string name="notification_new_comment">%s님이 회원님의 게시물에 댓글을 남겼습니다</string>
+    <string name="notification_new_follow">%s님이 회원님을 팔로우합니다</string>
+    <string name="notification_new_tag" formatted="false">%s님이 \'%s\' 태그에 새 게시물을 추가했습니다</string>
+    <string name="mark_all_as_read">모두 읽음으로 표시</string>
+    <string name="clear_all">모두 지우기</string>
+    <string name="no_notifications">새로운 알림이 없습니다</string>
+    <string name="default_notification_channel_id" translatable="false">default_channel</string>
+    <string name="notification_channel_name">SnapShot 알림</string>
+    <string name="notification_channel_description">SnapShot 앱 알림을 받습니다</string>
+    <string name="fcm_message">새 알림</string>
+    
+    <!-- 오류 메시지 -->
+    <string name="error_login">로그인에 실패했습니다. 다시 시도해주세요.</string>
+    <string name="error_register">회원가입에 실패했습니다. 다시 시도해주세요.</string>
+    <string name="error_password_mismatch">비밀번호가 일치하지 않습니다.</string>
+    <string name="error_empty_fields">모든 필드를 채워주세요.</string>
+    <string name="error_upload">업로드에 실패했습니다. 다시 시도해주세요.</string>
+    <string name="error_network">네트워크 오류가 발생했습니다</string>
+    <string name="error_permission_denied">권한이 거부되었습니다.</string>
+    <string name="error_required_field">필수 항목입니다</string>
+    <string name="error_invalid_url">유효한 URL을 입력해주세요</string>
+    <string name="error_invalid_coordinates">유효한 좌표를 입력해주세요</string>
+    <string name="error_invalid_date">유효한 날짜를 입력해주세요</string>
+    
+    <!-- 성공 메시지 -->
+    <string name="success_login">로그인 성공!</string>
+    <string name="success_register">회원가입 성공!</string>
+    <string name="success_post">게시물이 업로드되었습니다.</string>
+    <string name="success_profile_update">프로필이 업데이트되었습니다.</string>
+    <string name="no_search_results">검색 결과가 없습니다</string>
+    <string name="action_logout">로그아웃</string>
+    <string name="confirm_logout">로그아웃 하시겠습니까?</string>
+    <string name="login_required">로그인이 필요합니다.</string>
+    <string name="share_post_subject">%1$s님의 게시물</string>
+    <string name="share_post_text">"%1$s"
+%2$s</string>
+    <string name="share_via">공유하기</string>
 </resources>

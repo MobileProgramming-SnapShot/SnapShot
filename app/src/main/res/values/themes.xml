@@ -2,8 +2,97 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Snapshot" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        
+        <!-- 폰트 설정 적용 -->
+        <item name="fontFamily">@font/font_noto_sans</item>
+        <item name="android:fontFamily">@font/font_noto_sans</item>
+        
+        <!-- 텍스트 스타일 적용 -->
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Snapshot.Headline1</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Snapshot.Headline2</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Snapshot.Title</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Snapshot.Subtitle</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Snapshot.Body</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Snapshot.Caption</item>
+        
+        <!-- 창 호환성 개선 설정 -->
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        
+        <!-- 애니메이션 설정 -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+        
+        <!-- 리플 이펙트 색상 -->
+        <item name="colorControlHighlight">@color/primary_light</item>
+        
+        <!-- 카드 스타일 -->
+        <item name="materialCardViewStyle">@style/Widget.Snapshot.CardView</item>
+        <!-- 버튼 스타일 -->
+        <item name="materialButtonStyle">@style/Widget.Snapshot.Button</item>
     </style>
 
     <style name="Theme.Snapshot" parent="Base.Theme.Snapshot" />
+    
+    <!-- 액션 바가 없는 테마 -->
+    <style name="Theme.Snapshot.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+    
+    <!-- 스플래시 스크린 테마 -->
+    <style name="Theme.Snapshot.Splash" parent="Theme.Snapshot">
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
+    <!-- 버튼 스타일 -->
+    <style name="Widget.Snapshot.Button" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/TextAppearance.Snapshot.Body</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_animator</item>
+    </style>
+    
+    <style name="Widget.Snapshot.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/TextAppearance.Snapshot.Body</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    
+    <style name="Widget.Snapshot.Button.TextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.Snapshot.Body</item>
+    </style>
+    
+    <!-- 카드 스타일 -->
+    <style name="Widget.Snapshot.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/divider</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:stateListAnimator">@animator/card_state_list_animator</item>
+    </style>
 </resources>
