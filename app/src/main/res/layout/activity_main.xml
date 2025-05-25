@@ -27,7 +27,7 @@
         app:fabCradleRoundedCornerRadius="12dp"
         app:fabCradleVerticalOffset="6dp"
         app:fabAlignmentMode="center"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/lightestorange"
         app:elevation="8dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -47,10 +47,10 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/add_post"
         android:src="@drawable/ic_add"
-        app:backgroundTint="@color/primary"
+        app:backgroundTint="@color/logo_orange"
         app:layout_anchor="@id/bottom_app_bar"
         app:tint="@color/white"
-        app:rippleColor="@color/primary_light"
+        app:rippleColor="@color/lightorange"
         app:maxImageSize="24dp"
         app:elevation="12dp" />
 

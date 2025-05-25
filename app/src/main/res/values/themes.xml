@@ -95,4 +95,10 @@
         <item name="strokeWidth">1dp</item>
         <item name="android:stateListAnimator">@animator/card_state_list_animator</item>
     </style>
+
+        <style name="ShapeAppearanceOverlay.App.CornerRadius" parent="">
+            <item name="cornerFamily">rounded</item>
+            <item name="cornerSize">16dp</item>
+        </style>
+
 </resources>

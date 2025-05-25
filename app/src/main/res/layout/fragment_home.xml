@@ -20,17 +20,27 @@
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             android:elevation="0dp"
-            app:titleCentered="true"
-            app:title="@string/app_name"
+            app:titleCentered="false"
             app:titleTextAppearance="@style/TextAppearance.Snapshot.Title"
-            app:titleTextColor="@color/text_primary">
+            app:titleTextColor="@color/logo_orange">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/ic_launcher"
-                android:contentDescription="@string/app_name" />
+                android:id="@+id/toolbar_logo"
+                android:layout_width="65dp"
+                android:layout_height="55dp"
+                android:src="@drawable/logo"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="13dp"/>
+            <TextView
+            android:id="@+id/toolbar_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.Snapshot.Title"
+            android:textColor="@color/logo_orange"
+            android:layout_marginStart="7dp"
+                android:layout_marginTop="30dp"/>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -51,7 +61,7 @@
             android:paddingBottom="16dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            tools:listitem="@layout/item_post" />
+        tools:listitem="@layout/item_post" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -61,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
-        app:indicatorColor="@color/primary"
+        app:indicatorColor="@color/accent"
         app:trackColor="@color/primary_light"
         android:visibility="gone"
         app:indicatorSize="48dp" />
@@ -78,4 +88,4 @@
         android:visibility="gone"
         android:padding="16dp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout> 
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
