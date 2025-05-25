@@ -45,6 +45,6 @@
     <color name="logo_orange">#FC4C02</color>
     <color name="lightorange">#EEA787</color>
     <color name="lightestorange">#F8E7E2</color>
-    #F8E7E2
+    <color name="bottom_nav_active_indicator_color">#ECA686</color>
 
 </resources>

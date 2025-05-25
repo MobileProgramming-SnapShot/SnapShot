@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/logo_orange"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="24dp"
-                android:text="프로필 사진 변경" />
+                android:text="프로필 사진 변경"
+                android:textColor="@color/logo_orange"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_name"
@@ -87,6 +88,7 @@
                 android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/logo_orange"
                 android:text="저장" />
 
         </LinearLayout>

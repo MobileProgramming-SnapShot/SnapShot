@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout 
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -27,7 +27,7 @@
         app:fabCradleRoundedCornerRadius="12dp"
         app:fabCradleVerticalOffset="6dp"
         app:fabAlignmentMode="center"
-        android:backgroundTint="@color/lightestorange"
+        android:backgroundTint="#F4DDD3"
         app:elevation="8dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

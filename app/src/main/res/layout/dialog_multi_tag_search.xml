@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_search_tag"
+        android:textColor="@color/logo_orange"
         android:layout_marginTop="16dp"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -57,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/search"
+        android:backgroundTint="@color/logo_orange"
         android:layout_marginTop="16dp" />
 
 </LinearLayout> 

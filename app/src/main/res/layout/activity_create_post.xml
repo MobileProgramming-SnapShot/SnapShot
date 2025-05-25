@@ -91,16 +91,6 @@
                 app:layout_constraintTop_toBottomOf="@id/et_caption"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <View
-                android:id="@+id/tag_separator"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/tv_tags_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chip_group_tags"
                 android:layout_width="0dp"
@@ -165,7 +155,7 @@
         android:text="공유하기"
         android:textAllCaps="false"
         android:layout_margin="16dp"
-        android:backgroundTint="#FC4C02"
+        android:backgroundTint="@color/logo_orange"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

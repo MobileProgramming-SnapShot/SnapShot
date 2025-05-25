@@ -10,11 +10,11 @@
     android:textColor="@color/black"
     app:chipBackgroundColor="@color/lightorange"
     app:chipIconEnabled="true"
-    app:chipIconTint="@color/primary"
+    app:chipIconTint="@color/black"
     app:chipStrokeWidth="0dp"
     app:chipMinHeight="28dp"
     app:chipStartPadding="8dp"
     app:chipEndPadding="8dp"
     app:ensureMinTouchTargetSize="true"
-    app:rippleColor="@color/primary_light"
+    app:rippleColor="@color/lightestorange"
     tools:text="태그" />

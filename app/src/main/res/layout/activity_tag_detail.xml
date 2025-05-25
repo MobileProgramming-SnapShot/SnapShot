@@ -75,8 +75,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_external_link"
-        app:tabIndicatorColor="@color/primary"
-        app:tabSelectedTextColor="@color/primary"
+        app:tabIndicatorColor="@color/logo_orange"
+        app:tabSelectedTextColor="@color/logo_orange"
         app:tabTextColor="@color/grey">
 
         <com.google.android.material.tabs.TabItem
