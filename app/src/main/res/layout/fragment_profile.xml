@@ -1,255 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    android:background="#F5E6D1">
+
+
+
+    <ImageView
+
+        android:id="@+id/image_top_background"
+
         android:layout_width="match_parent"
+
+        android:layout_height="230dp"
+
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/orange_backgrond"
+
+        tools:ignore="ContentDescription" />
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:id="@+id/appbar_layout"
+
+        android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:text="사용자 이름" />
+        android:background="@android:color/transparent"
 
-        <ImageButton
-            android:id="@+id/btn_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_settings" />
+        app:elevation="0dp">
 
-    </androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+
+            android:id="@+id/toolbar"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="?attr/actionBarSize"
+
+            android:background="@android:color/transparent"
+
+            app:titleTextAppearance="@style/TextAppearance.Snapshot.Title"
+
+            app:titleTextColor="@color/text_primary"
+
+            app:elevation="0dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
 
     <androidx.core.widget.NestedScrollView
+
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        android:layout_height="match_parent"
+
+        android:clipToPadding="true"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+            android:layout_height="wrap_content"
+
+            android:paddingBottom="18dp">
+
+
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                app:civ_border_color="@color/grey_light"
-                app:civ_border_width="1dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ic_profile_placeholder" />
 
-            <TextView
-                android:id="@+id/tv_post_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_posts_label"
-                app:layout_constraintEnd_toStartOf="@+id/tv_follower_count"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toEndOf="@+id/iv_profile"
-                app:layout_constraintTop_toTopOf="@+id/iv_profile"
-                tools:text="15" />
+                android:id="@+id/iv_profile_pic"
 
-            <TextView
-                android:id="@+id/tv_posts_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/posts"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
-                app:layout_constraintEnd_toEndOf="@+id/tv_post_count"
-                app:layout_constraintStart_toStartOf="@+id/tv_post_count"
-                app:layout_constraintTop_toBottomOf="@+id/tv_post_count" />
+                android:layout_width="176dp"
 
-            <TextView
-                android:id="@+id/tv_follower_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="96dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_followers_label"
-                app:layout_constraintEnd_toStartOf="@+id/tv_following_count"
-                app:layout_constraintStart_toEndOf="@+id/tv_post_count"
-                app:layout_constraintTop_toTopOf="@+id/iv_profile"
-                tools:text="120" />
+                android:layout_height="166dp"
 
-            <TextView
-                android:id="@+id/tv_followers_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/followers"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
-                app:layout_constraintEnd_toEndOf="@+id/tv_follower_count"
-                app:layout_constraintStart_toStartOf="@+id/tv_follower_count"
-                app:layout_constraintTop_toBottomOf="@+id/tv_follower_count" />
+                android:layout_marginTop="100dp"
 
-            <TextView
-                android:id="@+id/tv_following_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="96dp"
-                android:layout_marginEnd="32dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_following_label"
+                android:src="@drawable/default_profile"
+
+                app:civ_border_color="#F56400"
+
+                app:civ_border_width="3dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_follower_count"
-                app:layout_constraintTop_toTopOf="@+id/iv_profile"
-                tools:text="85" />
+
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+
 
             <TextView
-                android:id="@+id/tv_following_label"
+
+                android:id="@+id/tv_username"
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/following"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
-                app:layout_constraintEnd_toEndOf="@+id/tv_following_count"
-                app:layout_constraintStart_toStartOf="@+id/tv_following_count"
-                app:layout_constraintTop_toBottomOf="@+id/tv_following_count" />
 
-            <TextView
-                android:id="@+id/tv_bio"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:text="사용자 이름"
+
+                android:textAppearance="@style/TextAppearance.Snapshot.Headline2"
+
+                android:textColor="@color/text_primary"
+
+                android:textSize="18sp" app:layout_constraintTop_toBottomOf="@id/iv_profile_pic"
+
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <LinearLayout
+
+                android:id="@+id/layout_stats_buttons"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp"
+
+                android:gravity="center"
+
+                android:orientation="horizontal"
+
+                android:paddingStart="24dp"
+
+                android:paddingEnd="24dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_username">
+
+
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/btn_followers"
+
+                    android:layout_width="140dp"
+
+                    android:layout_height="56dp"
+
+                    android:layout_marginEnd="16dp"
+
+                    android:backgroundTint="#F56400"
+
+                    android:paddingTop="4dp"
+
+                    android:paddingBottom="4dp"
+
+                    android:text="팔로워 456"
+
+                    android:textSize="16sp"
+
+                    app:cornerRadius="12dp" />
+
+
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/btn_following"
+
+                    android:layout_width="140dp"
+
+                    android:layout_height="56dp"
+
+                    android:backgroundTint="#F56400"
+
+                    android:paddingTop="4dp"
+
+                    android:paddingBottom="4dp"
+
+                    android:text="팔로잉 789"
+
+                    android:textSize="16sp"
+
+                    app:cornerRadius="12dp" />
+
+
+
+            </LinearLayout>
+
+
+
+            <EditText
+
+                android:id="@+id/et_interests"
+
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profile"
-                tools:text="자기소개 텍스트입니다. 사용자가 자신에 대해 작성한 내용이 이곳에 표시됩니다." />
 
-            <Button
-                android:id="@+id/btn_edit_profile"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/edit_profile"
-                android:textAllCaps="false"
+
+                android:layout_marginHorizontal="16dp"
+
+                android:layout_marginTop="24dp"
+
+                android:background="@android:color/transparent"
+
+                android:hint="관심사: (예: 맛집, 패션)을 적어보세요"
+
+                android:padding="12dp"
+
+                android:textStyle="bold" android:textColor="@color/text_primary"
+
+                android:textColorHint="@color/text_secondary"
+
                 app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+
+                app:layout_constraintTop_toBottomOf="@id/layout_stats_buttons"
+
+                tools:ignore="Autofill,TextFields" />
+
+
 
             <TextView
+
                 android:id="@+id/tv_saved_tags_title"
+
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
+
                 android:layout_marginStart="16dp"
+
                 android:layout_marginTop="16dp"
+
+                android:background="@drawable/tag_background"
+
+                android:padding="8dp"
+
                 android:text="@string/saved_tags"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile" />
 
-            <FrameLayout
-                android:id="@+id/container_saved_tags"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:minHeight="80dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_saved_tags_title">
+                android:textColor="@color/white"
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_saved_tags"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                android:textSize="15sp" app:layout_constraintStart_toStartOf="parent"
 
-                <TextView
-                    android:id="@+id/tv_no_saved_tags"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="저장한 태그가 없습니다"
-                    android:textColor="@color/gray"
-                    android:visibility="gone" />
+                app:layout_constraintTop_toBottomOf="@+id/et_interests" />
 
-                <ProgressBar
-                    android:id="@+id/progress_bar_tags"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:visibility="gone" />
-            </FrameLayout>
+
 
             <TextView
+
                 android:id="@+id/tv_posts_title"
+
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
+
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/posts"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
+
+                android:layout_marginTop="24dp"
+
+                android:text="게시물"
+
+                android:textAppearance="@style/TextAppearance.Snapshot.Headline2"
+
+                android:textColor="@color/text_primary"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/container_saved_tags" />
+
+                app:layout_constraintTop_toBottomOf="@id/tv_saved_tags_title" />
+
+
 
             <androidx.recyclerview.widget.RecyclerView
+
                 android:id="@+id/recycler_posts"
-                android:layout_width="0dp"
+
+                android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+
+                android:layout_marginTop="12dp"
+
+                android:clipToPadding="false"
+
+                android:padding="2dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_posts_title"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_post" />
+
+                app:layout_constraintTop_toBottomOf="@id/tv_posts_title"
+
+                tools:itemCount="9"
+
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+
+                tools:listitem="@layout/item_profile_post"
+
+                tools:spanCount="3" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+
+        android:id="@+id/progress_bar"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+
+        android:indeterminate="true"
+
+        android:visibility="gone"
+
+        app:indicatorColor="@color/primary"
+
+        app:indicatorSize="48dp"
+
+        app:trackColor="@color/primary_light" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

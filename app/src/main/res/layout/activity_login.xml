@@ -8,7 +8,7 @@
     android:paddingStart="24dp"
     android:paddingEnd="24dp"
     android:paddingBottom="36dp"
-    android:background="@android:color/white"
+    android:background="#F5E6D1"
     tools:context=".ui.auth.LoginActivity">
 
     <!-- 상단 Guideline: 더 위로 이동 -->
