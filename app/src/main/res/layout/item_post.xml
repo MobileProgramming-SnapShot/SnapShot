@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView 
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,17 +17,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <!-- 게시물 헤더 -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_user_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            app:civ_border_color="@color/primary_light"
-            app:civ_border_width="1dp"
+            app:civ_border_color="@color/logo_orange"
+            app:civ_border_width="2dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_profile_placeholder" />
@@ -74,7 +73,7 @@
             app:layout_constraintTop_toTopOf="@+id/iv_user_profile"
             app:tint="@color/text_secondary" />
 
-        <!-- 게시물 이미지 -->
+
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_post_image"
             android:layout_width="0dp"
@@ -84,22 +83,47 @@
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_user_profile"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerRadius"
             tools:src="@color/grey_light" />
 
-        <!-- 게시물 액션 버튼 -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:chipSpacingHorizontal="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_post_image"
+            app:singleLine="true">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_tag" />
+        </com.google.android.material.chip.ChipGroup>
+
         <LinearLayout
             android:id="@+id/layout_actions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_post_image">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chip_group_tags">
 
             <ImageButton
                 android:id="@+id/btn_like"
@@ -145,7 +169,6 @@
                 app:tint="@color/text_primary" />
         </LinearLayout>
 
-        <!-- 좋아요 수 -->
         <TextView
             android:id="@+id/tv_like_count"
             android:layout_width="wrap_content"
@@ -159,7 +182,6 @@
             app:layout_constraintTop_toBottomOf="@+id/layout_actions"
             tools:text="좋아요 123개" />
 
-        <!-- 게시물 내용 -->
         <TextView
             android:id="@+id/tv_caption"
             android:layout_width="0dp"
@@ -167,42 +189,14 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:ellipsize="end"
+            android:layout_marginBottom="19dp" android:ellipsize="end"
             android:maxLines="3"
             android:textAppearance="@style/TextAppearance.Snapshot.Body"
             android:textColor="@color/text_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_like_count"
-            tools:text="게시물 내용이 여기에 표시됩니다. 여러 줄이 될 수 있습니다." />
-
-        <!-- 태그 리스트 -->
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group_tags"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_caption"
-            app:chipSpacingHorizontal="8dp"
-            app:singleLine="true">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_tags"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_tag" />
-        </com.google.android.material.chip.ChipGroup>
-
+            app:layout_constraintBottom_toBottomOf="parent" tools:text="게시물 내용이 여기에 표시됩니다. 여러 줄이 될 수 있습니다." />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView> 
+</com.google.android.material.card.MaterialCardView>

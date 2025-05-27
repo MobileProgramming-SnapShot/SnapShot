@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
-        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorPrimaryContainer">@color/lightestorange</item>
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/text_primary</item>
@@ -45,7 +45,7 @@
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
         
         <!-- 리플 이펙트 색상 -->
-        <item name="colorControlHighlight">@color/primary_light</item>
+        <item name="colorControlHighlight">@color/lightestorange</item>
         
         <!-- 카드 스타일 -->
         <item name="materialCardViewStyle">@style/Widget.Snapshot.CardView</item>
@@ -95,4 +95,17 @@
         <item name="strokeWidth">1dp</item>
         <item name="android:stateListAnimator">@animator/card_state_list_animator</item>
     </style>
+
+        <style name="ShapeAppearanceOverlay.App.CornerRadius" parent="">
+            <item name="cornerFamily">rounded</item>
+            <item name="cornerSize">16dp</item>
+        </style>
+
+    <style name="Theme.App.ToggleButtonGroup" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/logo_orange</item>
+        <item name="colorOnPrimary">@color/logo_orange</item>
+
+        <item name="android:textColor">@color/logo_orange</item>
+    </style>
+
 </resources>

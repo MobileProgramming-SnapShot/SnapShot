@@ -34,6 +34,7 @@
             android:layout_weight="1"
             android:layout_marginEnd="4dp"
             android:text="@string/mark_all_as_read"
+            android:textColor="@color/logo_orange"
             android:textSize="12sp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -44,6 +45,7 @@
             android:layout_weight="1"
             android:layout_marginStart="4dp"
             android:text="@string/clear_all"
+            android:textColor="@color/logo_orange"
             android:textSize="12sp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
     </LinearLayout>

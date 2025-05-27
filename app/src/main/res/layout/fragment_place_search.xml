@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 버튼 그룹 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,26 +16,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:checkedButton="@id/btn_list_view"
-            app:singleSelection="true">
-
-            <Button
-                android:id="@+id/btn_list_view"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="목록" />
-
-            <Button
-                android:id="@+id/btn_map_view"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="지도" />
+            app:singleSelection="true"
+            android:theme="@style/Theme.App.ToggleButtonGroup"> <Button
+            android:id="@+id/btn_list_view"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="목록"
+            android:textColor="@color/black"/> <Button
+            android:id="@+id/btn_map_view"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지도"
+            android:textColor="@color/black" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
     </LinearLayout>
 
-    <!-- 목록 뷰 컨테이너 -->
     <FrameLayout
         android:id="@+id/list_view_container"
         android:layout_width="match_parent"
@@ -69,7 +66,6 @@
             android:visibility="gone" />
     </FrameLayout>
 
-    <!-- 지도 뷰 컨테이너 -->
     <FrameLayout
         android:id="@+id/map_view_container"
         android:layout_width="match_parent"
@@ -91,4 +87,4 @@
             app:srcCompat="@android:drawable/ic_menu_mylocation" />
     </FrameLayout>
 
-</LinearLayout> 
+</LinearLayout>
