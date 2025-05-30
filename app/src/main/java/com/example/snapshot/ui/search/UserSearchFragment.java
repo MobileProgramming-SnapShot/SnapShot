@@ -23,7 +23,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class UserSearchFragment extends Fragment {
     
@@ -61,47 +63,64 @@ public class UserSearchFragment extends Fragment {
         
         progressBar.setVisibility(View.VISIBLE);
         emptyView.setVisibility(View.GONE);
+        searchResults.clear(); // 검색 시작 시 항상 이전 결과 초기화
         
         // 사용자 검색 - 이름으로 검색
         Query nameQuery = userRepository.searchUsersByName(query);
         
         nameQuery.get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    searchResults.clear();
-                    
-                    for (DocumentSnapshot document : queryDocumentSnapshots) {
+                .addOnSuccessListener(nameQueryDocumentSnapshots -> {
+                    Set<User> uniqueUsers = new HashSet<>(); // 중복 제거를 위한 Set
+                    for (DocumentSnapshot document : nameQueryDocumentSnapshots) {
                         User user = document.toObject(User.class);
                         if (user != null) {
-                            searchResults.add(user);
+                            uniqueUsers.add(user);
                         }
                     }
                     
-                    // 검색 결과가 없으면 이메일로도 검색
-                    if (searchResults.isEmpty()) {
-                        Query emailQuery = userRepository.searchUsersByEmail(query);
-                        emailQuery.get()
-                                .addOnSuccessListener(emailResults -> {
-                                    for (DocumentSnapshot document : emailResults) {
-                                        User user = document.toObject(User.class);
-                                        if (user != null) {
-                                            searchResults.add(user);
-                                        }
+                    // 이메일로도 검색
+                    Query emailQuery = userRepository.searchUsersByEmail(query);
+                    emailQuery.get()
+                            .addOnSuccessListener(emailQueryDocumentSnapshots -> {
+                                for (DocumentSnapshot document : emailQueryDocumentSnapshots) {
+                                    User user = document.toObject(User.class);
+                                    if (user != null) {
+                                        uniqueUsers.add(user); // Set에 추가하여 중복 자동 처리
                                     }
-                                    
-                                    updateSearchResultsView();
-                                })
-                                .addOnFailureListener(e -> {
-                                    updateSearchResultsView();
-                                    Toast.makeText(requireContext(), R.string.error_network, Toast.LENGTH_SHORT).show();
-                                });
-                    } else {
-                        updateSearchResultsView();
-                    }
+                                }
+                                searchResults.clear();
+                                searchResults.addAll(new ArrayList<>(uniqueUsers)); // 최종 결과를 리스트에 추가
+                                updateSearchResultsView();
+                            })
+                            .addOnFailureListener(e -> {
+                                // 이름 검색 결과만이라도 보여주기 위해 현재까지의 uniqueUsers를 사용
+                                searchResults.clear();
+                                searchResults.addAll(new ArrayList<>(uniqueUsers));
+                                updateSearchResultsView();
+                                Toast.makeText(requireContext(), R.string.error_search_email, Toast.LENGTH_SHORT).show();
+                            });
                 })
                 .addOnFailureListener(e -> {
-                    progressBar.setVisibility(View.GONE);
-                    emptyView.setVisibility(View.VISIBLE);
-                    Toast.makeText(requireContext(), R.string.error_network, Toast.LENGTH_SHORT).show();
+                    // 이름 검색 실패 시 이메일로만 검색 시도
+                    Query emailQuery = userRepository.searchUsersByEmail(query);
+                    emailQuery.get()
+                            .addOnSuccessListener(emailQueryDocumentSnapshots -> {
+                                Set<User> uniqueUsers = new HashSet<>();
+                                for (DocumentSnapshot document : emailQueryDocumentSnapshots) {
+                                    User user = document.toObject(User.class);
+                                    if (user != null) {
+                                        uniqueUsers.add(user);
+                                    }
+                                }
+                                searchResults.clear();
+                                searchResults.addAll(new ArrayList<>(uniqueUsers));
+                                updateSearchResultsView();
+                            })
+                            .addOnFailureListener(emailError -> {
+                                progressBar.setVisibility(View.GONE);
+                                emptyView.setVisibility(View.VISIBLE);
+                                Toast.makeText(requireContext(), R.string.error_network, Toast.LENGTH_SHORT).show();
+                            });
                 });
     }
     

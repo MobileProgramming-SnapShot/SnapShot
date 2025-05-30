@@ -175,6 +175,7 @@
     <string name="error_invalid_url">유효한 URL을 입력해주세요</string>
     <string name="error_invalid_coordinates">유효한 좌표를 입력해주세요</string>
     <string name="error_invalid_date">유효한 날짜를 입력해주세요</string>
+    <string name="error_search_email">이메일 검색 중 오류가 발생했습니다.</string>
 
     <string name="success_login">로그인 성공!</string>
     <string name="success_register">회원가입 성공!</string>
