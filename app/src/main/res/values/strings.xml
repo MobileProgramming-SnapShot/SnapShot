@@ -113,10 +113,13 @@
     <string name="report_reason_harmful">유해한 내용</string>
     <string name="report_reason_false_info">허위 정보</string>
     <string name="report_reason_other">기타 사유</string>
+    <string name="report_reason_harassment">괴롭힘 또는 희롱</string>
+    <string name="report_reason_impersonation">사칭</string>
     <string name="report_post_title">게시물 신고</string>
     <string name="report_user_title">사용자 신고</string>
     <string name="report_content_hidden">이 콘텐츠는 신고가 누적되어 숨겨졌습니다</string>
     <string name="report_custom_reason_hint">신고 사유를 직접 입력해주세요</string>
+    <string name="report_submitted_placeholder">신고가 접수되었습니다.</string>
 
     <string name="search_tags">태그</string>
     <string name="search_users">사용자</string>
