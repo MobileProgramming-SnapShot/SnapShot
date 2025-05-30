@@ -49,7 +49,7 @@ public class UserSearchFragment extends Fragment {
         progressBar = view.findViewById(R.id.progress_bar);
         
         // 어댑터 설정
-        adapter = new UserAdapter(requireContext(), searchResults, true);
+        adapter = new UserAdapter(requireContext(), searchResults, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
         
