@@ -26,6 +26,9 @@ import com.google.firebase.firestore.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.content.ContextCompat;
+import android.content.res.ColorStateList;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private ActivityProfileBinding binding;
@@ -87,8 +90,13 @@ public class ProfileActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            if (currentUser != null && currentUser.getUid().equals(userId)) {
+                getSupportActionBar().setTitle(getString(R.string.title_my_profile));
+            } else {
+                getSupportActionBar().setTitle(getString(R.string.title_user_profile));
+            }
         }
-
         binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
     }
 
@@ -178,10 +186,18 @@ public class ProfileActivity extends AppCompatActivity {
     private void updateFollowButton(boolean isFollowing) {
         if (isFollowing) {
             binding.btnFollow.setText(R.string.unfollow);
-            binding.btnFollow.setBackgroundResource(R.drawable.bg_button_secondary);
+            binding.btnFollow.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, android.R.color.transparent)));
+            binding.btnFollow.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.logo_orange)));
+            binding.btnFollow.setStrokeWidth(getResources().getDimensionPixelSize(R.dimen.button_stroke_width));
+            binding.btnFollow.setTextColor(ContextCompat.getColor(this, R.color.logo_orange));
+            binding.btnFollow.setIcon(null);
         } else {
             binding.btnFollow.setText(R.string.follow);
-            binding.btnFollow.setBackgroundResource(R.drawable.bg_button_primary);
+            binding.btnFollow.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.logo_orange)));
+            binding.btnFollow.setStrokeColor(null);
+            binding.btnFollow.setStrokeWidth(0);
+            binding.btnFollow.setTextColor(ContextCompat.getColor(this, R.color.white));
+            binding.btnFollow.setIcon(null);
         }
     }
 
